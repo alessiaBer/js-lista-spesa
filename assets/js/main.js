@@ -1,14 +1,15 @@
 /* Data una lista della spesa, 
 stampare sulla pagina (anche brutalmente, basta che si vedano) gli elementi della lista individualmente con un ciclo while */
 
-//selezione l'elemento container dal DOM e lo assegno ad una variabile
-const containerEl = document.querySelector('.container');
+//selezione l'elemento card dal DOM e lo assegno ad una variabile
+const cardEl = document.querySelector('.card-body');
 
 //creo nel DOM un elemento ul
 const listEl = document.createElement('ul');
+listEl.classList.add('list-unstyled');
 
 // appendo al container l'elemento ul creato
-containerEl.append(listEl);
+cardEl.append(listEl);
 
 // creo un array con la lista della spesa
 const groceryList = [
@@ -29,7 +30,7 @@ while (i < groceryList.length) {
     //creo nel DOM un elemento li
     const listItem = document.createElement('li');
     //per ogni elemento li aggiungo al suo interno un componente dell'array
-    listItem.innerHTML = `${groceryItem}`;
+    listItem.innerHTML = `<i class="fa-regular fa-square-check px-2"></i>${groceryItem}`;
     // appendo all'elemento ul gli elementi li creati
     listEl.append(listItem)
 
